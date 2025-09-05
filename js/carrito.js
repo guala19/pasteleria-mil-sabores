@@ -22,18 +22,20 @@ export function renderCarrito(){
     const li=document.createElement('li')
     li.className='d-flex align-items-center gap-2'
     li.innerHTML=`
-      <img class="img-carrito" src="${it.img||'img/cake.jpg'}" alt="${it.name}" onerror="this.src='img/cake.jpg'">
-      <div class="flex-grow-1">
-        <div class="fw-semibold">${it.name} <span class="text-muted">(${it.size})</span></div>
-        <div class="small text-muted">${MONEDA.format(it.price)} c/u</div>
-      </div>
-      <div class="zona-cantidad">
-        <button class="btn btn-light btn-sm up">▲</button>
-        <input type="number" min="1" value="${it.qty}" class="form-control form-control-sm" style="width:60px">
-        <button class="btn btn-light btn-sm down">▼</button>
-      </div>
-      <button class="btn btn-outline-danger btn-sm del">✕</button>
+    <img class="img-carrito" src="${it.img||'img/cake.jpg'}" alt="${it.name}" onerror="this.src='img/cake.jpg'">
+    <div class="flex-grow-1">
+      <div class="fw-semibold">${it.name} <span class="text-muted">(${it.size})</span></div>
+      ${it.note?`<div class="small text-muted">“${it.note}”</div>`:''}
+      <div class="small text-muted">${MONEDA.format(it.price)} c/u</div>
+    </div>
+    <div class="zona-cantidad">
+      <button class="btn btn-light btn-sm up">▲</button>
+      <input type="number" min="1" value="${it.qty}" class="form-control form-control-sm" style="width:60px">
+      <button class="btn btn-light btn-sm down">▼</button>
+    </div>
+    <button class="btn btn-outline-danger btn-sm del">✕</button>
     `
+
     li.querySelector('.up').addEventListener('click',()=>actualizarCantidad(i,carrito[i].qty+1))
     li.querySelector('.down').addEventListener('click',()=>actualizarCantidad(i,carrito[i].qty-1))
     li.querySelector('input').addEventListener('input',e=>actualizarCantidad(i,e.target.value))
