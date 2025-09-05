@@ -109,4 +109,53 @@ h1,h2,h3{font-family:'Pacifico',cursive;color:var(--choco)}
 .producto .widget-cant .btn-del{width:36px;height:36px}
 .producto .widget-cant .contador{min-width:50px}
 
-.tab-content p{color:var(--muted)}
+
+.tab-content p {
+  color: var(--muted);
+}
+
+
+
+
+body {
+  background-color: #FFF5E1; 
+  font-family: 'Lato', sans-serif;
+}
+
+
+.btn-primary, .btn-success {
+  background-color: #FFC0CB; 
+  border-color: #FFC0CB;
+  color: #8B4513; 
+  font-weight: bold;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background-color: #ff9db5; 
+  border-color: #ff9db5;
+}
+
+
+.card-header {
+  background-color: #8B4513; 
+  color: #FFF5E1; 
+  font-weight: bold;
+}
+
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.carousel {
+  max-width: 800px;      
+  margin: 0 auto;       
+}
+
+.carousel-inner img {
+  height: 300px;        
+  object-fit: cover;    
+  border-radius: 10px;   
+}
