@@ -16,10 +16,12 @@
 </head>
 <body class="bg-pastel d-flex flex-column min-vh-100">
 
-  <!-- Header -->
+  
   <header class="border-bottom bg-white py-3">
     <div class="container d-flex align-items-center justify-content-between">
-      <!-- Centro (información pastelería) -->
+      <div class="logo">
+        <img src="img/Captura de pantalla 2025-09-05 112756.png" alt="Logo Pastelería 1000 Sabores" class="img-fluid"/>
+      </div>
       <div class="flex-grow-1 text-center">
         <h1 class="m-0 brand" style="font-family:'Pacifico', cursive; color:#8B4513;">
           Pastelería <span>1000 Sabores</span>
@@ -27,7 +29,7 @@
         <p class="text-secondary-custom m-0">Celebrando 50 años de dulzura y tradición 🎉</p>
       </div>
 
-      <!-- Derecha (botón catálogo y carrito) -->
+      
       <div class="d-flex align-items-center ms-auto gap-2">
         <a href="catalogo.html" class="btn btn-pastel">Ir al Catálogo</a>
         <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito" aria-controls="panelCarrito">
@@ -38,7 +40,7 @@
     </div>
   </header>
 
-  <!-- Main -->
+  
   <main class="flex-grow-1">
     <div class="container my-5">
       <h3 class="mb-4 text-center" style="font-family:'Pacifico', cursive; color:#8B4513;">
@@ -46,7 +48,7 @@
       </h3>
 
       <div class="row g-4">
-        <!-- Carrusel 1: Recetas -->
+        
         <div class="col-md-4">
           <div id="carruselRecetas" class="carousel slide shadow rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -72,7 +74,7 @@
           </div>
         </div>
 
-        <!-- Carrusel 2: Noticias -->
+        
         <div class="col-md-4">
           <div id="carruselNoticias" class="carousel slide shadow rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -98,7 +100,7 @@
           </div>
         </div>
 
-        <!-- Carrusel 3: Tips -->
+       
         <div class="col-md-4">
           <div id="carruselTips" class="carousel slide shadow rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -127,7 +129,6 @@
     </div>
   </main>
 
-  <!-- Carrito -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="panelCarrito" aria-labelledby="tituloCarrito">
     <div class="offcanvas-header">
       <h2 class="offcanvas-title h4" id="tituloCarrito">Carrito</h2>
@@ -150,12 +151,11 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  
   <footer class="text-center text-muted small py-3">
     © 2025 Pastelería 1000 Sabores
   </footer>
 
-  <!-- Scripts -->
   <script type="module" src="js/utilidades.js"></script>
   <script type="module" src="js/promociones.js"></script>
   <script type="module" src="js/carrito.js"></script>

@@ -1,4 +1,4 @@
-// --- envios.js ---
+
 const envioForm = document.getElementById('envioForm');
 const detallesEnvioCard = document.getElementById('detallesEnvioCard');
 const detallesEnvioContenido = document.getElementById('detallesEnvioContenido');
@@ -8,12 +8,10 @@ const seguimientoEnvioEstados = document.getElementById('seguimientoEnvioEstados
 envioForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // Capturar datos
   const cliente = document.getElementById('cliente').value;
   const direccion = document.getElementById('direccion').value;
   const fechaEntrega = document.getElementById('fechaEntrega').value;
 
-  // Mostrar detalles del envío
   detallesEnvioCard.classList.remove('d-none');
   detallesEnvioContenido.innerHTML = `
     <p><strong>Cliente:</strong> ${cliente}</p>
@@ -21,11 +19,9 @@ envioForm.addEventListener('submit', function(e) {
     <p><strong>Fecha de Entrega:</strong> ${fechaEntrega}</p>
   `;
 
-  // Reiniciar seguimiento
   seguimientoEnvioCard.classList.remove('d-none');
   seguimientoEnvioEstados.innerHTML = '';
 
-  // Estados simulados
   const estados = [
     "Pedido confirmado",
     "Preparando paquete",
@@ -41,7 +37,7 @@ envioForm.addEventListener('submit', function(e) {
       const li = document.createElement('li');
       li.className = 'list-group-item';
       li.textContent = estados[i];
-      if (i === 0) li.classList.add('active'); // el primero resaltado
+      if (i === 0) li.classList.add('active'); 
       seguimientoEnvioEstados.appendChild(li);
 
       if (i > 0) {
@@ -51,7 +47,7 @@ envioForm.addEventListener('submit', function(e) {
       }
 
       i++;
-      setTimeout(actualizarEstado, 3000); // avanza cada 3s
+      setTimeout(actualizarEstado, 3000); 
     }
   }
 

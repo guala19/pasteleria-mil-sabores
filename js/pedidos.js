@@ -1,8 +1,7 @@
-// --- pedidos.js ---
-// Clave en LocalStorage
+
 const PEDIDOS_KEY = "pedidos";
 
-// Funciones de almacenamiento
+
 function cargarPedidos() {
   return JSON.parse(localStorage.getItem(PEDIDOS_KEY)) || [];
 }
@@ -10,13 +9,13 @@ function guardarPedidos(pedidos) {
   localStorage.setItem(PEDIDOS_KEY, JSON.stringify(pedidos));
 }
 
-// Función para obtener el último pedido guardado
+
 function obtenerUltimoPedido() {
   const pedidos = cargarPedidos();
   return pedidos[pedidos.length - 1] || null;
 }
 
-// Mostrar boleta en el HTML
+
 function mostrarBoleta(pedido) {
   const boletaCard = document.getElementById("boletaCard");
   const boletaContenido = document.getElementById("boletaContenido");
@@ -34,7 +33,7 @@ function mostrarBoleta(pedido) {
   boletaCard.classList.remove("d-none");
 }
 
-// Ejecutar al cargar la página
+
 window.addEventListener("DOMContentLoaded", () => {
   const pedido = obtenerUltimoPedido();
   if (pedido) {
