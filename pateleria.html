@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de cuenta</title>
+  <link rel="stylesheet" href=".css/style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="login.html">Login</a>
+    <a href="cuentas.html">Cuentas</a>
+  </div>
+
+  <div class="logo-container">
+    <img src="img/logoPasteleria.png" alt="logo_Pasteleria" width="80">
+    <h1 class="empresa-nombre">Pasteleria 100 Sabores</h1>
+  </div>
+
+  <div class="form-container">
+    <h2>Crear cuenta</h2>
+    <form onsubmit="mensaje_descuento(event)">
+      <label for="nombre">Nombre completo</label><br>
+      <input type="text" id="nombre" placeholder="Tu nombre"><br><br>
+
+      <label for="email">Correo electrónico</label><br>
+      <input type="email" id="email" placeholder="ejemplo@gmail.com"><br><br>
+
+      <label for="edad">Edad</label><br>
+      <input type="number" id="edad" placeholder="Tu edad"><br><br>
+
+      <label for="codigo">Código de descuento</label><br>
+      <input type="text" id="codigo" placeholder="Escribe un código"><br><br>
+
+      <label for="password">Contraseña</label><br>
+      <input type="password" id="password" placeholder="********"><br><br>
+
+      <label for="password2">Repetir contraseña</label><br>
+      <input type="password" id="password2" placeholder="********"><br><br>
+
+      <button type="submit">Registrarme</button>
+    </form>
+    <p class="nota">
+      Si usas tu correo institucional recibirás una torta gratis 🎂
+    </p>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
