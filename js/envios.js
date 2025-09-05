@@ -1,3 +1,4 @@
+// --- envios.js ---
 const envioForm = document.getElementById('envioForm');
 const detallesEnvioCard = document.getElementById('detallesEnvioCard');
 const detallesEnvioContenido = document.getElementById('detallesEnvioContenido');
@@ -30,7 +31,7 @@ envioForm.addEventListener('submit', function(e) {
     "Preparando paquete",
     "En camino al centro de distribución",
     "En ruta hacia la dirección de entrega",
-    "Entregado"
+    "Entregado ✅"
   ];
 
   let i = 0;
@@ -39,10 +40,18 @@ envioForm.addEventListener('submit', function(e) {
     if (i < estados.length) {
       const li = document.createElement('li');
       li.className = 'list-group-item';
-      li.textContent = `✅ ${estados[i]}`;
+      li.textContent = estados[i];
+      if (i === 0) li.classList.add('active'); // el primero resaltado
       seguimientoEnvioEstados.appendChild(li);
+
+      if (i > 0) {
+        const prev = seguimientoEnvioEstados.children[i - 1];
+        prev.classList.remove('active');
+        prev.classList.add('list-group-item-success');
+      }
+
       i++;
-      setTimeout(actualizarEstado, 3000); // Avanza cada 3 segundos
+      setTimeout(actualizarEstado, 3000); // avanza cada 3s
     }
   }
 
