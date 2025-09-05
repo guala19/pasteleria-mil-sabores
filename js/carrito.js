@@ -56,8 +56,8 @@ export function renderCarrito(){
 export function iniciarCarritoUI(){
   document.getElementById('aplicarPromos')?.addEventListener('click',renderCarrito)
   document.getElementById('btnPagar')?.addEventListener('click',()=>{
-    alert('Pedido confirmado')
-    carrito=[];persistir();renderCarrito()
+  window.location.href = "pedidos.html"
   })
+
   actualizarBadge();renderCarrito()
 }
