@@ -159,3 +159,19 @@ body {
   object-fit: cover;    
   border-radius: 10px;   
 }
+
+/* .btn-user{font-size:1.35rem}
+.menu-user{min-width:220px;border-radius:.75rem}
+.menu-user .btn{border-radius:.6rem;font-weight:700}
+.menu-user .btn + .btn{margin-top:.5rem}
+
+.icono-user {
+  width: 20px;
+  height: 20px;
+  fill: var(--choco);
+} */
+
+.btn-user i {
+  color: var(--choco);
+  font-size: 20px;
+}
