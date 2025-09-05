@@ -56,8 +56,38 @@ export function renderCarrito(){
 export function iniciarCarritoUI(){
   document.getElementById('aplicarPromos')?.addEventListener('click',renderCarrito)
   document.getElementById('btnPagar')?.addEventListener('click',()=>{
-  window.location.href = "pedidos.html"
+    const codigo = document.getElementById('codigoPromo')?.value || ""
+    const nacimiento = document.getElementById('nacimiento')?.value || ""
+    const correo = document.getElementById('correoPromo')?.value || ""
+
+    const r = calcularPromociones(carrito, { codigo, nacimiento, correo })
+
+    const pedido = {
+      id: 'P' + Date.now(),
+      fecha: new Date().toISOString(),
+      items: carrito.slice(),
+      subtotal: r.subtotal,
+      descuentos: r.descuentos,
+      total: r.total,
+      notas: r.notas
+    }
+
+    const k = 'pedidos'
+    const lista = JSON.parse(localStorage.getItem(k) || '[]')
+    lista.push(pedido)
+    localStorage.setItem(k, JSON.stringify(lista))
+    localStorage.setItem('ultimoPedido', JSON.stringify(pedido))
+
+    carrito = []
+    ;(function persistir(){
+      localStorage.setItem('carrito', JSON.stringify(carrito))
+      const el = document.getElementById('contadorCarrito')
+      if(el) el.textContent = '0'
+    })()
+
+    window.location.href = 'pedidos.html?id=' + encodeURIComponent(pedido.id)
   })
+
 
   actualizarBadge();renderCarrito()
 }

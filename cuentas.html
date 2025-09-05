@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuentas registradas</title>
+  <link rel="stylesheet" href=".css/style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="registro.html">Registro</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <div class="logo-container">
+    <img src="img/logoPasteleria.png" alt="logo_Pasteleria" width="80">
+    <h1 class="empresa-nombre">Pasteleria 100 Sabores</h1>
+  </div>
+
+  <div class="form-container">
+    <h2>Cuentas registradas</h2>
+
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Edad</th>
+        <th>Acciones</th>
+      </tr>
+      <tr>
+        <td>Juan Pérez</td>
+        <td>juanperez@gmail.com</td>
+        <td>28</td>
+        <td>
+          <button onclick="editarUsuario(this)">Editar</button>
+          <button onclick="eliminarUsuario(this)">Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>María López</td>
+        <td>maria.lopez@duocuc.cl</td>
+        <td>52</td>
+        <td>
+          <button onclick="editarUsuario(this)">Editar</button>
+          <button onclick="eliminarUsuario(this)">Eliminar</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- enlazamos el JS -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
